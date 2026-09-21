@@ -1,0 +1,368 @@
+
+
+
+.home{
+    padding: 40px 80px;
+    width: 100%;
+    height: calc(90vh - var(--navbarHeight));
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    .avatar{
+        width: 50%;
+        height: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+
+            height: 100%;
+            width: 100%;
+            object-fit: contain ;
+            scale: 1.2;
+            filter: drop-shadow(4px 4px 8px #f5e90079);
+        }
+    }
+    .welcomebox{
+        width: 50%;
+        height: fit-content;
+        overflow: hidden;
+
+        .welcome{
+            font-size: 1.1rem;
+            color: var(--muted-text);
+            letter-spacing: 1.5px;
+            margin-bottom: 4px;
+
+            span{
+                color: var(--accent);
+            }
+        }
+        .role{
+            width: 100%;
+            margin-bottom: 24px;
+            h1{
+                font-size: 5.6rem;
+                text-wrap: wrap;
+
+                line-height: 6rem;
+                color: var(--text);
+
+              
+
+
+
+                span{
+                    font-weight: 600;
+                    display: block;
+                    position: relative;
+                    &::after{
+                        content: "";
+                        left: 2%;
+                        bottom: -5%;
+                        width: 10%;
+                        height: 4px;
+
+                        border-radius: 4px;
+                        background-color: var(--accent);
+                        position: absolute;
+                    }
+                }
+            }
+        }
+        .desc{
+            font-size: 1rem;
+            letter-spacing: 2px;
+            color: var(--muted-text);
+            margin-bottom: 24px;
+        }
+
+        .sociallinks{
+            margin-top: 24px;
+            width: 100%;
+            display: flex;
+            gap: 24px;
+            overflow: hidden;
+            .iconbox{
+                color: var(--text);
+                .icon{
+                    transition: .3s linear;
+                    cursor: pointer;
+
+                    &:hover{
+                        transform: translateY(-4px);
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+    .home {
+        padding: 40px 50px;
+        height: calc(90vh - var(--navbarHeight));
+
+        .avatar {
+            width: 48%;
+            padding: 10px;
+
+            img {
+                scale: 1.1;
+            }
+        }
+
+        .welcomebox {
+            width: 52%;
+
+            .welcome {
+                font-size: 1rem;
+            }
+
+            .role {
+                h1 {
+                    font-size: 4.2rem;
+                    line-height: 4.5rem;
+                }
+            }
+
+            .desc {
+                font-size: 0.9rem;
+                letter-spacing: 1.5px;
+            }
+        }
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .home {
+        width: 100%;
+        min-height: calc(100vh - var(--navbarHeight));
+        height: auto;
+
+        padding: 30px 25px 60px;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 10px;
+
+
+        /* -------------------------
+           AVATAR
+        ------------------------- */
+
+        .avatar {
+            width: min(80vw, 330px);
+            height: auto;
+
+            padding: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: auto;
+
+                object-fit: contain;
+
+                scale: 1;
+
+                filter:
+                    drop-shadow(4px 4px 8px #f5e90079);
+            }
+        }
+
+
+        /* -------------------------
+           CONTENT
+        ------------------------- */
+
+        .welcomebox {
+            width: 100%;
+            height: fit-content;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            text-align: center;
+
+
+            /* Welcome text */
+
+            .welcome {
+                font-size: 0.9rem;
+
+                letter-spacing: 1.2px;
+
+                margin-bottom: 6px;
+                margin-top: 16px;
+            }
+
+
+            /* Heading */
+
+            .role {
+                width: 100%;
+
+                margin-bottom: 18px;
+
+                h1 {
+                    width: 100%;
+
+                    font-size: clamp(2.8rem, 11vw, 4rem);
+
+                    line-height: 0.95;
+
+                    letter-spacing: 0;
+
+                    text-wrap: balance;
+
+
+                    span {
+                        display: block;
+
+                        &::after {
+                            left: 50%;
+                            transform: translateX(-50%);
+
+                            bottom: -10px;
+
+                            width: 50px;
+                            height: 3px;
+                        }
+                    }
+                }
+            }
+
+
+            /* Description */
+
+            .desc {
+                width: min(100%, 420px);
+
+                margin-bottom: 20px;
+
+                font-size: 0.8rem;
+
+                line-height: 1.5;
+
+                letter-spacing: 1px;
+            }
+
+
+            /* Social links */
+
+            .sociallinks {
+                width: fit-content;
+
+                margin-top: 18px;
+
+                gap: 22px;
+
+                justify-content: center;
+
+                .iconbox {
+
+                    .icon {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .home {
+        padding: 20px 18px 50px;
+
+        gap: 0;
+
+
+        .avatar {
+            width: min(78vw, 280px);
+        }
+
+
+        .welcomebox {
+
+            .welcome {
+                font-size: 0.78rem;
+
+                letter-spacing: 1px;
+            }
+
+
+            .role {
+
+                margin-bottom: 20px;
+
+                h1 {
+                    font-size: clamp(2.4rem, 12vw, 3.2rem);
+
+                    line-height: 0.95;
+                }
+            }
+
+
+            .desc {
+                width: 95%;
+
+                font-size: 0.75rem;
+
+                line-height: 1.45;
+
+                letter-spacing: 0.7px;
+
+                margin-bottom: 18px;
+            }
+
+
+            .sociallinks {
+                gap: 18px;
+
+                margin-top: 15px;
+
+                .iconbox {
+
+                    .icon {
+                        width: 23px;
+                        height: 23px;
+                    }
+                }
+            }
+        }
+    }
+}

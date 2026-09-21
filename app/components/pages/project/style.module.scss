@@ -1,0 +1,463 @@
+
+
+
+// .ProjectPage{
+//     width: 100%;
+//     min-height: calc(100vh - var(--navbarHeight));
+//     padding: 20px 80px;
+
+//     .heading{
+//         width: 100%;
+//         padding: 20px 0;
+//         text-align: center;
+//         font-size: 2.6rem;
+//         height: fit-content;
+//         color: var(--text);
+//         font-weight: 600;
+//         letter-spacing: 1.4px;
+//         margin-bottom: 32px;
+        
+
+//         p{
+//             color: var(--accent);
+//             display: inline;
+
+//         }
+//     }
+
+//     .ProjectsSection{
+//         width: 100%;
+
+//         .ProjectBox{
+//             width: 100%;
+//             background-color: color-mix(in srgb, var(--foreground) 50%, transparent);
+//             border-radius: 10px;
+//             overflow: hidden;
+
+//             .header{
+//                 padding: 15px 30px;
+//                 height: calc(--navbarHeight);
+//                 background-color: var(--foreground);
+//                 display: flex;
+//                 align-items: center;
+//                 justify-content: space-between;
+//                 .about{
+
+//                     p{
+//                         color: var(--muted-text);
+//                         font-size: 0.75rem;
+//                         letter-spacing: 1.3px;
+//                     }
+//                     h4{
+//                         letter-spacing: 1.3px;
+//                         font-size: 1.2rem;
+//                         font-weight: 600;
+//                         color: var(--accent);
+//                     }
+//                 }
+
+//                 .opt{
+//                     width: fit-content;
+//                     height: 100%;
+
+//                     display: flex;
+//                     align-items: center;
+//                     gap:24px ;
+//                     color: var(--text);
+
+//                     svg{
+//                         width: 24px;
+//                         height: 24px;
+//                     }
+
+//                     .previewsitebtn{
+//                         display: flex;
+//                         gap: 8px;
+                        
+//                         align-items: center;
+//                         border: 1px solid var(--accent);
+//                         padding: 6px 18px;
+//                         border-radius: 20px;
+//                     }
+//                 }
+//             }
+            
+//             .previews{
+//                 padding: 35px 30px;
+//                 width: 100%;
+//                 height: fit-content;
+//                 display: flex;
+//                 justify-content: space-between;
+
+//                 .mainpreview{
+//                     width: 66.5%;
+//                     aspect-ratio: 16 / 9;
+//                     img{
+//                         width: 100%;
+//                         border-radius: 8px;
+//                         height: 100%;
+//                     }
+//                 }
+
+//                 .optpreview{
+//                     width: 32%;
+//                     display: flex;
+//                     flex-direction: column;
+//                     justify-content: space-between;
+//                     .prev1, .prev2{
+//                         width: 100%;
+//                         aspect-ratio: 16 / 9;
+//                         img{
+//                             border-radius: 10px;
+//                             width: 100%;
+//                             height: 100%;
+//                         }
+//                     }
+//                 }
+//             }
+
+
+//         }
+//     }
+    
+// }
+
+
+
+.ProjectPage {
+    width: 100%;
+    min-height: calc(100vh - var(--navbarHeight));
+    padding: 20px 80px;
+
+    .heading {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 3.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--text);
+        font-weight: 600;
+        letter-spacing: 1.4px;
+        margin-bottom: 32px;
+
+        p {
+            color: var(--accent);
+            display: inline;
+        }
+    }
+
+    .ProjectsSection {
+        width: 100%;
+        min-height: 110vh;
+
+
+
+
+        .ProjectBox {
+            width: 100%;
+            background-color: color-mix(
+                in srgb,
+                var(--foreground) 50%,
+                transparent
+            );
+            border-radius: 10px;
+            backdrop-filter: blur(8px);
+            margin-bottom: 36px;
+
+
+
+            .header {
+                padding: 15px 30px;
+                height: var(--navbarHeight);
+                background-color: var(--foreground);
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-radius: 10px 10px 0 0;
+
+                .about {
+                    p {
+                        color: var(--muted-text);
+                        font-size: 0.75rem;
+                        letter-spacing: 1.3px;
+                    }
+
+                    h4 {
+                        letter-spacing: 1.3px;
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        color: var(--accent);
+                    }
+                }
+
+                .opt {
+                    width: fit-content;
+                    height: 100%;
+
+                    display: flex;
+                    align-items: center;
+                    gap: 24px;
+
+                    color: var(--text);
+
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    .previewsitebtn {
+                        display: flex;
+                        gap: 8px;
+                        align-items: center;
+
+                        border: 1px solid var(--accent);
+                        padding: 6px 18px;
+                        border-radius: 20px;
+                    }
+                }
+            }
+
+            .previews {
+                padding: 35px 30px;
+                width: 100%;
+                height: fit-content;
+
+                display: flex;
+                justify-content: space-between;
+
+                .mainpreview {
+                    width: 66.5%;
+                    aspect-ratio: 16 / 9;
+                    height: auto;
+                    
+                    img {
+                        width: 100%;
+                        height: auto;
+                        aspect-ratio: 16 / 9;
+                        border-radius: 8px;
+                        object-fit: cover;
+                    }
+                }
+
+                .optpreview {
+                    width: 32%;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .prev1,
+                    .prev2 {
+                        width: 100%;
+                        aspect-ratio: 16 / 9;
+                        
+                        img {
+                            width: 100%;
+                            aspect-ratio: 16 / 9;
+                            height: auto;
+                            border-radius: 10px;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .ProjectPage {
+        padding: 20px 40px;
+
+        .heading {
+            font-size: 2.3rem;
+            margin-bottom: 24px;
+        }
+
+        .ProjectsSection {
+
+            .ProjectBox {
+
+                .header {
+                    padding: 15px 20px;
+
+                    .opt {
+                        gap: 18px;
+
+                        svg {
+                            width: 22px;
+                            height: 22px;
+                        }
+
+                        .previewsitebtn {
+                            padding: 6px 14px;
+
+                            p {
+                                font-size: 0.85rem;
+                            }
+                        }
+                    }
+                }
+
+                .previews {
+                    padding: 25px 20px;
+                }
+            }
+        }
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .ProjectPage {
+        padding: 15px 16px;
+
+        .heading {
+            padding: 15px 0;
+            font-size: 1.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .ProjectsSection {
+
+            .ProjectBox {
+                border-radius: 8px;
+
+                .header {
+                    height: auto;
+                    min-height: 75px;
+                    padding: 12px 16px;
+
+                    .about {
+
+                        p {
+                            font-size: 0.65rem;
+                            letter-spacing: 1px;
+                        }
+
+                        h4 {
+                            font-size: 1rem;
+                            letter-spacing: 1px;
+                        }
+                    }
+
+                    .opt {
+                        gap: 12px;
+
+                        svg {
+                            width: 19px;
+                            height: 19px;
+                        }
+
+                        .previewsitebtn {
+                            padding: 6px 11px;
+                            gap: 5px;
+
+                            p {
+                                font-size: 0.7rem;
+                            }
+                        }
+                    }
+                }
+
+                .previews {
+                    padding: 16px;
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    .mainpreview {
+                        width: 100%;
+                        aspect-ratio: 16 / 9;
+                    }
+
+                    .optpreview {
+                        width: 100%;
+
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 12px;
+
+                        .prev1,
+                        .prev2 {
+                            width: 100%;
+                            aspect-ratio: 16 / 9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 410px) {
+
+    .ProjectPage {
+        padding: 10px 12px;
+
+        .heading {
+            font-size: 1.65rem;
+        }
+
+        .ProjectsSection {
+
+            .ProjectBox {
+
+                .header {
+                    padding: 11px 12px;
+
+                    .opt {
+                        gap: 9px;
+
+                        svg {
+                            width: 17px;
+                            height: 17px;
+                        }
+
+                        .previewsitebtn {
+                            padding: 5px 9px;
+
+                            p {
+                                font-size: 0.65rem;
+                            }
+
+                            .icon {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                .previews {
+                    padding: 12px;
+                    gap: 10px;
+
+                    .optpreview {
+                        gap: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

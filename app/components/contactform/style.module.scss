@@ -1,0 +1,143 @@
+.contactformpage {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 0;
+
+
+    div {
+        width: 100%;
+        height: fit-content;
+
+
+
+        label {
+            color: var(--text);
+            letter-spacing: 1.2px;
+
+
+            font-size: 0.9rem;
+            letter-spacing: 1.4px;
+        }
+
+        input,
+        textarea {
+            margin-top: 4px;
+            width: 100%;
+            box-sizing: border-box;
+
+            font-family: inherit;
+            font-size: 0.85rem;
+            letter-spacing: 1.2px;
+
+            padding: 10px 20px;
+
+            color: var(--text);
+
+            background-color: color-mix(in srgb,
+                    var(--foreground) 50%,
+                    transparent);
+
+            border: 1px solid color-mix(in srgb,
+                    var(--foreground) 15%,
+                    transparent);
+
+            border-radius: 4px;
+
+            outline: none;
+
+            transition: border-color 0.2s ease;
+
+            &:focus {
+                border-color: color-mix(in srgb,
+                        var(--accent) 55%,
+                        transparent);
+            }
+
+            &::placeholder {
+                color: var(--muted-text);
+            }
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+            line-height: 1.5;
+        }
+
+    }
+
+    button {
+        width: fit-content;
+        height: fit-content;
+        padding: 8px 15px;
+        background-color: var(--accent);
+        color: var(--background);
+
+        border-radius: 4px;
+        font-size: 0.95rem;
+        letter-spacing: 1.4px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        overflow: hidden;
+        gap: 8px;
+        
+
+
+        svg{
+            width: 22px;
+            height: 22px;
+            aspect-ratio: 1;
+            transition: .2s linear;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        box-shadow:
+            0 0 40px 0 rgb(from var(--accent) r g b / 0.32),
+            0 0 20px 0 rgb(from var(--accent) r g b / 0.20);
+            transition: .2s linear;
+            cursor: pointer;
+            
+            &:hover {
+                &:not(.wrong,.sended){
+
+                    transform: translateY(-4px);
+                    svg{
+                        transform: translateX(200%);
+                    }
+                }
+            }
+            
+            &.wrong{
+            box-shadow:
+                0 0 40px 0 rgba( 197,32,32,0.32),
+                0 0 20px 0 rgba( 197,32,32,0.20);
+                background-color: rgba(197, 32, 32, 0.716);
+                color: var(--text);
+                .wrongicon{
+                    display: flex;
+                }
+                
+            }
+            
+            &.sended{
+                background-color: rgba(57, 169, 37, 0.716);
+                color: var(--text);
+                box-shadow:
+                    0 0 40px 0 rgba(95, 197, 32, 0.32),
+                    0 0 20px 0 rgba( 95,197,32,0.20);
+
+        }
+
+    }
+
+
+}

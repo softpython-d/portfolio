@@ -1,0 +1,246 @@
+.navbar {
+    width: 100%;
+    height: var(--navbarHeight);
+    padding: 20px 60px;
+
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 100;
+
+    backdrop-filter: blur(8px);
+
+    .branding {
+        width: fit-content;
+        height: 100%;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        
+        .brandinginfo{
+            color: var(--text);
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+
+        }
+
+        span {
+            display: inline;
+            color: var(--accent);
+        }
+    }
+
+    .menubox {
+        display: flex;
+        align-items: center;
+        gap: 48px;
+        overflow: hidden;
+
+        .menu{
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1.1rem;
+
+            position: relative;
+            transition: 0.2s ease-in-out;
+
+            &.active {
+                &::after {
+                    width: 60%;
+                }
+            }
+
+            &:hover {
+                &::after {
+                    width: 60%;
+                }
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+
+                width: 0%;
+                height: 2px;
+
+                border-radius: 8px;
+
+                bottom: 0;
+                left: 0;
+
+                background-color: var(--accent);
+
+                transition: 0.2s linear;
+            }
+        }
+    }
+
+    // Hidden on desktop
+    .menuButton {
+        display: none;
+    }
+
+    .mobileMenu {
+        display: none;
+    }
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 20px 40px;
+
+        .menubox {
+            gap: 30px;
+        }
+    }
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 650px) {
+    .navbar {
+        padding: 16px 25px;
+
+        .branding {
+            font-size: 1.4rem;
+        }
+
+        // Hide desktop navigation
+        .menubox {
+            display: none;
+        }
+
+        // Hamburger
+        .menuButton {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0;
+
+            border: none;
+            background: transparent;
+
+            color: var(--text);
+
+            font-size: 2rem;
+
+            cursor: pointer;
+
+            z-index: 102;
+
+            transition: 0.2s ease;
+
+            &:hover {
+                color: var(--accent);
+            }
+        }
+
+        // Mobile dropdown
+        .mobileMenu {
+            position: absolute;
+
+            top: 100%;
+            left: 0;
+
+            width: 100%;
+
+            padding: 10px 25px 25px;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 5px;
+
+            background: rgba(13, 13, 13, 0.92);
+            backdrop-filter: blur(15px);
+
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+            transform: translateY(-15px);
+            opacity: 0;
+            visibility: hidden;
+
+            transition:
+                opacity 0.25s ease,
+                transform 0.25s ease,
+                visibility 0.25s ease;
+
+            z-index: 101;
+
+            .mobileMenuItem {
+                width: 100%;
+
+                padding: 14px 10px;
+
+                text-decoration: none;
+
+                color: var(--text);
+
+                font-size: 1rem;
+
+                border-radius: 6px;
+
+                transition: 0.2s ease;
+
+                &.active {
+                    color: var(--accent);
+                }
+
+                &:hover {
+                    color: var(--accent);
+                    background-color: rgba(255, 255, 255, 0.04);
+                }
+            }
+        }
+
+        .mobileMenuOpen {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 410px) {
+    .navbar {
+        padding: 14px 18px;
+
+        .branding {
+            font-size: 1.25rem;
+        }
+
+        .menuButton {
+            font-size: 1.8rem;
+        }
+
+        .mobileMenu {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+    }
+}

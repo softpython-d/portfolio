@@ -1,0 +1,542 @@
+
+.contact {
+    width: 100%;
+    height: fit-content;
+    padding: 80px clamp(20px, 6vw, 80px);
+
+    background-image: url("../../../../public/contact/contact.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .header {
+        width: 100%;
+
+        h1 {
+            color: var(--text);
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            font-weight: 600;
+            line-height: 1.1;
+
+            span {
+                color: var(--accent);
+            }
+        }
+    }
+
+    .detailandform {
+        width: 100%;
+        margin-top: clamp(35px, 5vw, 48px);
+
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: clamp(30px, 5vw, 80px);
+
+        /* =========================
+           CONTACT DETAILS
+        ========================= */
+
+        .details {
+            width: 55%;
+            max-width: 650px;
+            height: fit-content;
+            border-radius: 18px;
+            color: var(--text);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+
+            .head {
+                width: 100%;
+                padding: 12px clamp(20px, 3vw, 40px);
+
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                border-radius: 18px;
+
+                background-color: var(--foreground);
+
+                .icon {
+                    color: var(--accent);
+                    flex-shrink: 0;
+
+                    svg {
+                        width: 34px;
+                        height: 34px;
+                    }
+                }
+
+                h2 {
+                    color: var(--text);
+                    font-size: clamp(1.3rem, 2vw, 1.8rem);
+                    font-weight: 500;
+                }
+            }
+
+            .infocontainer {
+                width: 100%;
+                padding: 20px clamp(20px, 3vw, 40px);
+
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+
+                .infobox {
+                    width: 100%;
+
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 16px;
+
+                    .icon {
+                        width: fit-content;
+                        height: fit-content;
+                        padding: 10px;
+
+                        flex-shrink: 0;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        border-radius: 10px;
+
+                        background-color: color-mix(
+                            in srgb,
+                            var(--accent) 15%,
+                            transparent
+                        );
+
+                        svg {
+                            width: 20px;
+                            height: 20px;
+                            color: var(--accent);
+                        }
+                    }
+
+                    .info {
+                        width: 100%;
+                        min-width: 0;
+
+                        .title {
+                            font-size: 0.95rem;
+                            letter-spacing: 1px;
+                            overflow-wrap: anywhere;
+                        }
+
+                        .desc {
+                            font-size: 0.8rem;
+                            color: var(--muted-text);
+                            letter-spacing: 1.2px;
+                            overflow-wrap: anywhere;
+                        }
+                    }
+                }
+            }
+
+            hr {
+                width: 85%;
+                margin: 20px 0;
+
+                border: none;
+                border-top: 1px solid color-mix(
+                    in srgb,
+                    var(--text) 15%,
+                    transparent
+                );
+            }
+
+            .connectbox {
+                width: 100%;
+                padding: 10px clamp(20px, 3vw, 40px);
+
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                .icon {
+                    width: fit-content;
+                    height: fit-content;
+                    padding: 10px;
+
+                    flex-shrink: 0;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    border-radius: 10px;
+
+                    background-color: color-mix(
+                        in srgb,
+                        var(--accent) 15%,
+                        transparent
+                    );
+
+                    box-shadow: 0 0 40px -8px var(--accent);
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                        color: var(--accent);
+                    }
+                }
+
+                .info {
+                    width: 100%;
+                    min-width: 0;
+
+                    .title {
+                        font-size: 1rem;
+                        color: var(--text);
+                    }
+
+                    .desc {
+                        font-size: 0.8rem;
+                        letter-spacing: 1.2px;
+                        color: var(--muted-text);
+                        overflow-wrap: anywhere;
+                    }
+                }
+            }
+
+            .links {
+                width: 70%;
+                padding: 20px 0;
+
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                gap: 15px;
+
+                a {
+                    position: relative;
+                    transition: transform 0.2s linear;
+
+                    &:hover {
+                        transform: translateY(-4px);
+
+                        .tooltip {
+                            display: flex;
+                        }
+                    }
+
+                    .tooltip {
+                        position: absolute;
+                        top: 40px;
+                        left: 50%;
+
+                        transform: translateX(-50%);
+
+                        padding: 2px 8px;
+
+                        color: var(--text);
+                        font-size: 0.8rem;
+                        white-space: nowrap;
+
+                        background-color: var(--background);
+
+                        border-radius: 4px;
+                        z-index: 10;
+
+                        display: none;
+                    }
+
+                    &::after {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+
+                        transform: translate(-50%, -50%);
+
+                        width: 80%;
+                        height: 80%;
+
+                        content: "";
+
+                        background-color: var(--text);
+                        border-radius: 4px;
+
+                        z-index: 0;
+                    }
+
+                    svg {
+                        width: 38px;
+                        height: 38px;
+
+                        position: relative;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+
+        /* =========================
+           CONTACT FORM
+        ========================= */
+
+        .contactform {
+            
+            width: 32%;
+            max-width: 500px;
+            height: fit-content;
+
+            padding: 30px;
+            padding-bottom: 10px;
+
+            color: var(--text);
+
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+
+            .header {
+                width: 100%;
+
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                .icon {
+                    width: 48px;
+                    height: 48px;
+
+                    flex-shrink: 0;
+                    aspect-ratio: 1;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    border-radius: 8px;
+
+                    background-color: color-mix(
+                        in srgb,
+                        var(--accent) 15%,
+                        transparent
+                    );
+
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                        color: var(--accent);
+                    }
+                }
+
+                .title {
+                    width: 100%;
+                    min-width: 0;
+
+                    h2 {
+                        font-size: 1rem;
+                    }
+
+                    p {
+                        font-size: 0.8rem;
+                        color: var(--muted-text);
+                        line-height: 1rem;
+                    }
+                }
+            }
+
+
+
+
+        }
+
+        .btn{
+            width: fit-content;
+            height: fit-content;
+
+
+            
+        }
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .contact {
+        padding: 70px 40px;
+
+        .detailandform {
+            gap: 30px;
+
+            .details {
+                width: 55%;
+            }
+
+            .contactform {
+                width: 45%;
+                padding: 25px;
+            }
+        }
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .contact {
+        padding: 60px 24px;
+
+        .header {
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        .detailandform {
+            flex-direction: column;
+            gap: 40px;
+
+            .details,
+            .contactform {
+                width: 100%;
+                max-width: none;
+            }
+
+            .details {
+
+                .head {
+                    padding: 12px 20px;
+
+                    h2 {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                .infocontainer {
+                    padding: 20px;
+                }
+
+                .connectbox {
+                    padding: 10px 20px;
+                }
+
+                .links {
+                    width: 100%;
+                    padding: 20px;
+                }
+            }
+
+            .contactform {
+                padding: 25px 20px;
+
+                
+            }
+        }
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .contact {
+        padding: 50px 16px;
+
+        .header {
+
+            h1 {
+                font-size: 1.9rem;
+            }
+        }
+
+        .detailandform {
+            gap: 30px;
+
+            .details {
+
+                .head {
+
+                    .icon {
+
+                        svg {
+                            width: 28px;
+                            height: 28px;
+                        }
+                    }
+
+                    h2 {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                .infocontainer {
+                    gap: 20px;
+
+                    .infobox {
+                        gap: 12px;
+
+                        .icon {
+                            padding: 8px;
+
+                            svg {
+                                width: 18px;
+                                height: 18px;
+                            }
+                        }
+                    }
+                }
+
+                .links {
+
+                    a {
+
+                        svg {
+                            width: 32px;
+                            height: 32px;
+                        }
+                    }
+                }
+            }
+
+            .contactform {
+                padding: 20px 16px;
+
+                .header {
+                    gap: 12px;
+
+                    .icon {
+                        width: 42px;
+                        height: 42px;
+
+                        svg {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+
+                    .title {
+
+                        h2 {
+                            font-size: 0.95rem;
+                        }
+
+                        p {
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

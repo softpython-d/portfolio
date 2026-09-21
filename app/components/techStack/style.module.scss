@@ -1,0 +1,447 @@
+.techstack {
+    --section-width: 20%;
+    --box-width: calc((80% - 40px) / 3);
+    --border: 4px solid color-mix(
+        in srgb,
+        var(--background) 50%,
+        transparent
+    );
+
+    width: 100%;
+    height: 20vh;
+    margin-top: 48px;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--foreground);
+    color: var(--text);
+    border-radius: 18px;
+
+    .header {
+        width: var(--section-width);
+        height: 100%;
+        padding-left: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+
+        border-right: var(--border);
+        border-radius: 2px;
+
+        .head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            .icon {
+                width: fit-content;
+                height: fit-content;
+                padding: 10px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                background-color: var(--accent);
+                color: var(--background);
+                border-radius: 50%;
+            }
+
+            p {
+                margin: 0;
+                font-size: 1.4rem;
+                font-weight: 600;
+            }
+        }
+
+        .desc {
+            font-size: 1rem;
+            letter-spacing: 1.2px;
+            color: var(--muted-text);
+        }
+    }
+
+    .box {
+        width: var(--box-width);
+        height: 100%;
+        padding: 20px 0 20px 20px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &:not(:last-child) {
+            border-right: var(--border);
+            border-radius: 2px;
+        }
+
+        .title {
+            height: fit-content;
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 1.2px;
+            color: var(--text);
+
+            .icon {
+                color: var(--accent);
+            }
+        }
+
+        .stack {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+
+            .icon {
+                position: relative;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    .tooltip {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translate(-50%, 0);
+                    }
+
+                    svg {
+                        transform: translateY(-4px);
+                    }
+                }
+
+                svg {
+                    display: block;
+                    transition: transform 0.2s linear;
+                    cursor: pointer;
+                }
+            }
+
+            .tooltip {
+                position: absolute;
+                left: 50%;
+                bottom: -35px;
+                z-index: 3;
+
+                padding: 4px 10px;
+
+                background-color: var(--background);
+                color: var(--text);
+                border-radius: 4px;
+
+                font-size: 0.8rem;
+                white-space: nowrap;
+
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+
+                transform: translate(-50%, 5px);
+                transition:
+                    opacity 0.2s ease,
+                    visibility 0.2s ease,
+                    transform 0.2s ease;
+            }
+        }
+    }
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1024px) {
+
+    .techstack {
+        --section-width: 25%;
+        --box-width: calc((75% - 20px) / 3);
+
+        height: auto;
+        min-height: 220px;
+
+        padding: 18px;
+
+        gap: 10px;
+
+        .header {
+            padding-left: 12px;
+
+            .head {
+                gap: 8px;
+
+                .icon {
+                    padding: 8px;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                p {
+                    font-size: 1.1rem;
+                }
+            }
+
+            .desc {
+                font-size: 0.8rem;
+            }
+        }
+
+        .box {
+            padding: 18px 0 18px 15px;
+
+            gap: 18px;
+
+            .title {
+                gap: 8px;
+                font-size: 0.9rem;
+
+                .icon {
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+
+            .stack {
+                gap: 20px;
+
+                .icon {
+                    svg {
+                        width: 26px;
+                        height: 26px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .techstack {
+        width: 100%;
+        height: auto;
+
+        margin-top: 35px;
+        padding: 25px 20px;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 0;
+
+        border-radius: 14px;
+
+
+        /* -----------------------------
+           HEADER
+        ----------------------------- */
+
+        .header {
+            width: 100%;
+            height: auto;
+
+            padding: 5px 15px 25px;
+
+            grid-column: 1 / -1;
+
+            border-right: none;
+            border-bottom: var(--border);
+
+            gap: 8px;
+
+
+            .head {
+
+                .icon {
+                    padding: 8px;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                p {
+                    font-size: 1.15rem;
+                }
+            }
+
+            .desc {
+                font-size: 0.78rem;
+                letter-spacing: 0.8px;
+            }
+        }
+
+
+        /* -----------------------------
+           BOXES
+        ----------------------------- */
+
+        .box {
+            width: 100%;
+            height: auto;
+
+            padding: 25px 15px;
+
+            gap: 18px;
+
+            border-right: none !important;
+
+            .title {
+                gap: 8px;
+
+                font-size: 0.85rem;
+
+                .icon {
+                    svg {
+                        width: 19px;
+                        height: 19px;
+                    }
+                }
+            }
+
+
+            .stack {
+                gap: 20px;
+
+                flex-wrap: wrap;
+
+                .icon {
+
+                    svg {
+                        width: 27px;
+                        height: 27px;
+                    }
+
+                    .tooltip {
+                        bottom: -32px;
+
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+        }
+
+
+        /* Vertical divider between the two columns */
+
+        .frontend {
+            border-right: var(--border) !important;
+        }
+
+        .backend {
+            border-right: none !important;
+        }
+
+
+        /* Bottom row */
+
+        .tools {
+            grid-column: 1 / -1;
+
+            border-top: var(--border);
+
+            padding-top: 25px;
+        }
+    }
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+
+    .techstack {
+        margin-top: 30px;
+
+        padding: 22px 15px;
+
+        border-radius: 12px;
+
+
+        .header {
+            padding: 5px 10px 22px;
+
+            .head {
+
+                .icon {
+                    padding: 7px;
+
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+
+            .desc {
+                font-size: 0.72rem;
+            }
+        }
+
+
+        .box {
+            padding: 22px 10px;
+
+            gap: 15px;
+
+
+            .title {
+                font-size: 0.78rem;
+
+                gap: 6px;
+            }
+
+
+            .stack {
+                gap: 16px;
+
+                .icon {
+
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    .tooltip {
+                        font-size: 0.65rem;
+                        padding: 3px 7px;
+                    }
+                }
+            }
+        }
+
+
+        .tools {
+            padding-top: 22px;
+        }
+    }
+}
