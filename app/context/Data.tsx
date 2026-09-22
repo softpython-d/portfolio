@@ -72,12 +72,12 @@ const UserContextProvider = ({
     children: React.ReactNode;
 }) => {
     const Ginfo = {
-        name: "Nikhil Jadoun",
+        name: "Nikhil Jadaun",
         email: "aimarketer777@gmail.com",
         availability: "Freelance / full week",
         para1: "A Full-Stack Web Developer who turns ideas into modern, functional, and engaging digital experiences.",
         para2: "I’m a B.tech AI ML student, currently exploring the world of web development, building real projects, and constantly learning new technologies. I enjoy solving problems, writing clean code and creating experience that make a difference",
-        contact: "7037573827"
+        contact: "+91 7037573827"
     };
 
     const SocialLinks = {

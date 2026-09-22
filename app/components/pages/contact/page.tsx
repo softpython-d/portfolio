@@ -12,11 +12,12 @@ import { FaWhatsapp } from "react-icons/fa";
 
 
 const Detail = () => {
-    const { SocialLinks } = usercontext()
+    const { SocialLinks, Ginfo } = usercontext()
+    
     const infodata = [
-        { icon: MdEmail, text: "gmail@gmail.com", title: "Email" },
+        { icon: MdEmail, text: Ginfo.email, title: "Email" },
         { icon: FaClock, text: "Freelance / Full Week", title: "Availability" },
-        { icon: FaWhatsapp, text: "+91 7037573827", title: "Reach me" },
+        { icon: FaWhatsapp, text: Ginfo.contact, title: "Reach me" },
     ]
     return (
         <>
