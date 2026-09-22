@@ -72,7 +72,7 @@ const UserContextProvider = ({
     children: React.ReactNode;
 }) => {
     const Ginfo = {
-        name: "Nikhil Singh",
+        name: "Nikhil Jadoun",
         email: "aimarketer777@gmail.com",
         availability: "Freelance / full week",
         para1: "A Full-Stack Web Developer who turns ideas into modern, functional, and engaging digital experiences.",
