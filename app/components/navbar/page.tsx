@@ -80,7 +80,7 @@ const Navbar = () => {
       <div className={`${style.branding} kaushanScript`}>
         <div className={style.brandinginfo}>
 
-          Lunar <span>Corp</span>
+          Portfolio 
         </div>
       </div>
 
