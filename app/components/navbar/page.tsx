@@ -79,7 +79,6 @@ const Navbar = () => {
     <nav className={style.navbar}>
       <div className={`${style.branding} kaushanScript`}>
         <div className={style.brandinginfo}>
-
           Portfolio 
         </div>
       </div>
